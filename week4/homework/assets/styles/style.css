@@ -1,0 +1,155 @@
+ /* Позиционирование */
+body {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+}
+ /* Блочная модель */
+#logo {
+    margin: 50px;
+}
+
+header {
+    text-align: left;
+    padding-left: 10%;
+    line-height: 1%;
+}
+
+h1, #p1 {
+    margin-left: -1%;
+}
+
+.list-item {
+    display: inline;
+}
+
+#second-article {
+    margin: 5%; 
+    line-height: 1;
+}
+#sec-art-pic {
+  float: left;
+  padding: 2%;
+}
+
+h4 {
+    padding: 0%;
+}
+
+#third-article {
+    padding: 15%; 
+}
+
+.foto_article {
+    float: left;
+    padding: 2%;
+}
+address {
+    display:inline;
+    margin: 2%;
+    padding:2%;
+}
+
+#allright {
+    text-align:center; 
+}
+
+
+/* Типографика */
+
+body {
+    color: white;
+    font-family: "Rubik", sans-serif;
+}
+
+h1, #p1 {
+    font-weight: 800;
+    font-size: 48px;
+    text-transform: uppercase;
+}
+
+h2 {
+    color: #f9c332;
+    font-weight: 700;
+    font-size: 98px;
+    text-transform: uppercase;   
+}
+#h2-lower {
+    color: #f9c332;
+    font-weight: 700;
+    font-size: 98px;
+    text-transform: none;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+.title::after {
+    content: 'с доходностью 60%';
+    color: #f9c332;
+}
+
+h4 {
+    color: #f9c332;
+    font-size: 24px; 
+}
+.four-title::after {
+    content: 'всего за 3 минуты?';
+    color: white;
+}
+.four-title::before{
+    content: 'Узнай в чем';
+    color: white;
+}
+
+h5 {
+    font-size: 34px;
+}
+
+.font-new {
+    font-family: "Comfortaa", sans-serif;
+}
+
+
+/* Оформление */
+
+body {
+    background-color: black;
+}
+header {
+    
+    background-image: url(/week4/homework/assets/images/background.png);
+    background-size: cover;
+    height: 894px;   
+}
+
+.list-item {
+    list-style-type: none;   
+}
+
+button {
+    border: 1px solid #756d44;
+    border-radius: 3px;
+    width: 256px;
+    height: 57px;
+    background-color: #f4b200;
+    color: white;
+}
+input {
+    border: 1px solid #756d44;
+    border-radius: 3px;
+    width: 256px;
+    height: 57px;
+}
+
+#third-article {
+    background-color: #363636; 
+}
+
+section {
+    background-color: #272624;
+}
+
