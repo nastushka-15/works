@@ -1,0 +1,72 @@
+ /* Позиционирование */
+nav {
+    position: fixed;
+    top: 0; 
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    display: flex;
+    padding: 14px 16px;
+}
+
+h1{
+    margin: 5%;   
+}
+
+.flexbox {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+.flex-elements {
+    display: flex;
+    width: 20%;
+    height: 30%;
+}
+
+/* Типографика */
+body {
+    font-family: "Poiret One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+nav a {
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    color: #f2f2f2;
+}
+h1 {
+    font-size: 70px;
+    text-align: center;
+}
+
+/* Оформление */
+body {
+    background-image: url(/week5/homework2/assets/images/back1.jpg);
+    background-size: cover;
+}
+
+nav {
+    overflow: hidden;
+    background-color: #8e20c5;
+}
+nav a:hover {
+    background: #ddd;
+    color: black;
+}
+h1 {
+    text-shadow: 2px 2px 4px rgba(179, 147, 211, 0.1),
+    3px 4px 4px rgba(179, 147, 211, 0.15),
+    4px 6px 4px rgba(179, 147, 211, 0.2),
+    5px 8px 4px rgba(179, 147, 211, 0.25);
+}
+
+.flex-elements:hover {
+    background: rgb(190, 20, 153, 0.2);
+    cursor: pointer;
+    transform: scale(1.2);
+}
