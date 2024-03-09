@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  /* Позиционирование */
 main {
     display: flex; 
@@ -79,3 +80,86 @@ aside {
 .footer-section {
     background-color: rgb(111, 96, 69);
 }
+=======
+ /* Позиционирование */
+main {
+    display: flex; 
+    min-height: 80vh;
+}
+
+h2 {
+    width: 80vw;
+    text-align: center;
+}
+
+.main-part {
+    display: flex;
+    flex-direction: column;
+    min-height: 90%;
+}
+
+.main-flexbox {
+    min-height: 90%;
+    display: flex;
+    align-items: flex-end;
+    align-content: flex-end;
+    flex-flow: row wrap;
+    justify-content:space-around;
+}
+
+.main-section {
+    margin: 5%;
+    width: 30vw;
+    height: 10vh;   
+}
+
+#grow-section {
+    flex-grow: 1;
+}
+aside {
+    width: 20vw;
+} 
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+    padding: 1%;
+}
+
+.footer-section {
+    width: 20vw;
+    height: 5vh;    
+}
+
+/* Типографика */
+body {
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+}
+
+/* Оформление */
+
+body {
+    background-color: rgb(227, 164, 164, 0.5);
+}
+
+main {
+    background-color: bisque;
+}
+
+.main-section {
+    background-color: rgb(197, 50, 114);
+}
+
+aside {
+    background-color: beige;
+}
+
+.footer-section {
+    background-color: rgb(111, 96, 69);
+}
+>>>>>>> 57057c55bd082cf05ba8f53e78b1254d51f2f57f
