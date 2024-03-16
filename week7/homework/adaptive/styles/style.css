@@ -1,0 +1,126 @@
+/* Позиционирование */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 20%;
+    grid-template-rows: 1fr 3fr 10%;
+    gap: 1rem;
+}
+header {
+    grid-row: 1;
+    grid-column: 1/3;
+    
+}   
+main{
+    grid-row: 2;
+    grid-column: 1;
+}
+aside {
+    grid-row: 2;
+    grid-column: 2;
+}
+
+footer {
+
+    grid-row: 3;
+    grid-column: 1/3;
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 1fr 1fr;
+    gap: 1rem;
+}
+
+.main-section {
+    grid-row: 1;
+    grid-column: 1/3;
+}
+
+.fin-main-section{
+    grid-row: 3;
+    grid-column: 1/3;
+
+}
+@media screen and (min-width: 1024px){
+.footer-container {
+    display: grid;
+    grid-template-columns:repeat(4, 1fr); 
+    gap: 1rem;  
+}
+}
+
+@media screen and (min-width: 426px) and (max-width: 1023px){
+    .footer-container {
+        display: none;
+    }
+}
+@media screen and (max-width: 425px) {
+    .footer-container {
+        display: none;
+    }
+    main{
+        grid-row: 2;
+        grid-column: 1;
+    }
+    aside {
+        grid-row: 3;
+        grid-column: 1; 
+    }
+    
+    .main-container {
+        display: grid;
+        grid-template-columns: 1fr;   
+        grid-template-rows: 1fr 1fr 1fr 1fr;  
+    }
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 3fr 10%;
+        gap: 1rem;
+    }
+    .main-section {
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    .fin-main-section{
+        grid-row: 4;
+        grid-column: 1;
+    }
+}
+
+/* Типографика */
+body {
+    text-align: center;
+    color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size:larger;
+}
+
+
+/* Оформление */
+
+body {
+    background-color: rgba(18, 17, 18, 0.5);
+}
+
+main {
+    background-color: rgb(172, 141, 156);
+}
+
+.main {
+    background-color: rgb(104, 81, 125);
+}
+
+aside {
+    background-color: rgb(192, 13, 126);
+}
+
+.footer-section {
+    background-color: rgb(96, 78, 91);
+}
+
+
+
+
