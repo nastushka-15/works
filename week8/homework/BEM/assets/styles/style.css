@@ -1,0 +1,32 @@
+body {
+  font-family: roboto slab;
+}
+
+.header-border {
+  border-bottom: 1px solid rgb(128, 128, 128, 0.2);
+}
+
+.header-card__picture {
+  height: 85%;
+}
+
+.header-card__title, .header-logo__text, .possibilities__title {
+  font-weight: bold;
+text-transform: uppercase;
+}
+
+.header-card__title {
+font-size: 4rem;
+}
+
+.subscribe-card {
+  color: white;
+  width:25%;
+  background-color: #EC615B;
+}
+
+.subscribe-card__email {
+  width: 85%;
+  margin: 1%;
+}
+  
