@@ -1,13 +1,5 @@
-.navbar-brand  {
-    color: white;
-    justify-content: flex-start;
-
-
+.body {
+  color: blue;
 }
-.navbar-nav{
-  justify-content: flex-end;
 
-}
-.navbar {
-color: white;
-}
+/*# sourceMappingURL=style.css.map */
