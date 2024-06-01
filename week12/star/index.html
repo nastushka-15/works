@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>сервис комментариев</title>
+</head>
+<body>
+    <h1>Сервис комментариев со спам фильтром</h1>
+    <div class="main">
+        <form class="comment-form">
+            <h2>Оставьте Ваш комментарий</h2>
+            <label for="name">Введите Ваше имя</label>
+            <input type="text" id="name"> </input>
+            <label for="avatar">Введите ссылку Вашего аватара</label>
+            <input type="text" id="avatar"></input>
+            <label for="comment">Оставьте Ваш комментарий </label>
+            <textarea id="comment"cols="30" rows="10"> </textarea>
+            <button type="button" class="button glow-on-hover">Отправить</button>
+        </form>
+
+        <div class="chat-form">
+            <h2>Чат</h2>
+            <img id="userAvatar" src="" alt="фото аватара пользователя">
+            <p id = "userName"></p>
+            <p id = "userComment"></p>
+        </div>     
+    </div>
+    
+    
+
+
+    <script src="./script.js"></script>  
+</body>
+</html>
