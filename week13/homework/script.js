@@ -17,7 +17,7 @@ function calculateDays() {
     console.log(birthDateTimeatamp);
     const currentTimestamp = Date.now();
     console.log(currentTimestamp);
-    let diffInMilliseconds =  birthDateTimeatamp - currentTimestamp;
+   let diffInMilliseconds =  birthDateTimeatamp - currentTimestamp;
     console.log(diffInMilliseconds);
     const daysBefor = Math.floor(diffInMilliseconds/(1000 * 60 *60 * 24));
     console.log(daysBefor);

@@ -1,0 +1,16 @@
+body {
+    background-image:  url("/week14/kinostar/assets/images/back.png");
+    background-size: cover;
+    color: white;
+}
+h1 {
+    text-align: center;
+}
+h2{
+    font-weight: bold;
+}
+.directorContent {
+    display: flex;
+    flex-direction: row;
+    
+}
