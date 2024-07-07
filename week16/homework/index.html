@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма регистрации</title>
+    <link rel="stylesheet" href="./assets/style/style.css">
+</head>
+<body>
+    
+    <div class="login-page">
+        <h1>Форма регистрации</h1>
+        <div class="form">
+          <form name="loginForm" class="login-form" novalidate>
+            <input type="text" class="input-field" name="username" placeholder="Имя" minlength="2" maxlength="20" required/>
+            <span class="error" id="usernameError"></span>
+
+            <input type="email" class="input-field" name="email" placeholder="email" required/>
+            <span class="error" id="emailError"></span>
+
+            <input type="number" class="input-field" name="age" placeholder="Возраст"/>
+            <span class="error" id="ageError"></span>
+
+            <div class="radio">
+                <p>Укажите ваш пол:</p>
+                
+                <div><input type="radio" class="input-field checkbackground" name="gender">женский</div>
+                <div><input type="radio" class="input-field checkbackground" name ='gender'>мужской</div>
+            </div>
+
+            <div class="select">
+           
+                <select class="input-field" name="professionSelected" id="" placeholder="Профессия" required>
+                  <option selected disabled value="">-- Выберите профессию --</option>
+                  <option value="doctor">Врач</option>
+                  <option value="programmer">Программист</option>
+                  <option value="teacer">Учитель</option>
+                  <option value="disainer">Дизайнер</option>
+                  <option value="engineer">Инженер</option>
+                  <option value="saller">Продавец</option>
+                  <option value="other">Другое</option>
+                </select>
+                <span class="error" id="professionError"></span>
+            </div>
+
+            <input type="password" class="input-field" name="password" placeholder="пароль" required minlength="8" pattern="^[a-zA-Z0-9]+$"/>
+            <span class="error" id="passwordError"></span>
+            <div class="checkbox">
+            <input type="checkbox" class="input-field" name="agreeTerms" class="smallFont" required>я соглашаюсь на обработку персональных данных
+            <span class="error" id="termsError"></span>
+            </div>
+            <button name="submitBtn" disabled >Зарегистрироваться</button>
+            <!-- <p class="message">Not registered? <a href="#">Create an account</a></p> -->
+          </form>
+        </div>
+      </div>
+
+
+    <script src="./script.js"></script> 
+</body>
+</html>

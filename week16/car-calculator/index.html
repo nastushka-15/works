@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/images/icon-car.png" type="image/png"/>
+    <title>Калькулятор расчета стоимости авто</title>
+    <link rel="stylesheet" href="./assets/style/style.css">
+</head>
+<body>
+    <h1>Калькулятор расчета стоимости автомобиля</h1>
+    <form name="calculatorForm" class="container">
+        <div>
+            <label for="carBrend">Марка автомобиля:
+                <select class="input-field" name="carBrend" id="carBrend" onchange="updateModels()"  placeholder="Марка">
+                    <!-- <option selected disabled value="">-- Выберите марку --</option> -->
+                    <option value="audi"> audi</option>
+                    <option value="bmw">bmw</option>
+                    <option value="mercedes">mercedes</option>
+                    <option value="jaguar">jaguar</option>
+                </select>
+            </label>
+        <label for="model">Модель:
+            <select class="input-field" name="model" id="carModel" placeholder="Модель">
+                <option selected disabled value="">-- Выберите модель --</option>
+            </select>
+        </label>
+    </div>
+    <div >
+        <label for="fuel" >Тип топлива:
+            <div class="radio">
+            <input type="radio" name="fuel" value="1000">бензин
+            <input type="radio" name="fuel" value="2000">дизель
+            <input type="radio" name="fuel" value="2500">газ
+            <input type="radio" name="fuel" value="300000">электричество
+            </div>
+        </label>
+    </div>
+    <label for="engine">Объем двигателя:
+        <input type="number" min="1.1" max="3.5" name="engine" placeholder="от 1.1 литра до 3.5 литров" class="input-field">
+    </label>
+    <div>
+        <label for="condition">Состояние автомобиля: 
+            <div class="radio">
+            <input type="radio" name="carCondition" id="newCar" value="new" onclick="showOwnershipOptions()"> Новый
+            <input type="radio" name="carCondition" id="usedCar" value="used" onclick="showOwnershipOptions()"> Подержанный<br>
+            </div>
+    <div id="ownershipOptions" style="display:none;">
+        <div class="radio">
+        <input type="radio" name="ownership" id="1to2Owners" value="1to2"> 1-2 владельца<br>
+        <input type="radio" name="ownership" id="3plusOwners" value="3plus"> Более 3-х владельцев<br>
+        </div>
+    </div>
+        </label>
+    </div>
+
+    <div>
+        <label for="payment">Способ оплаты: 
+            <div class="radio">
+            <input type="radio" class="size" name="payment">банковская карта
+            <input type="radio" class="size" name="payment">наличные
+            <input type="radio" class="size" name="payment">счет на юридическое лицо
+            </div>
+        </label>
+    </div>
+    <button name="calculateBtn">Рассчитать</button>
+    <div>
+        <p id="result"></p>
+    </div>
+    </form>
+
+    <script src="./script.js"></script> 
+</body>
+</html>
