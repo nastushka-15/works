@@ -50,7 +50,7 @@ function showOwnershipOptions() {
 }
 
 
-
+const total = brandPrice + modelPrice + fuelPrice;
 // function calculatePrice(){
 
 function calculatePrice() {
@@ -124,7 +124,7 @@ console.log(fuelPrice);
 //         fuelPrice = 2000;
 // }
 //const total = brandPrice + modelPrice + fuelPrice;
-const total = brandPrice + modelPrice + fuelPrice;
+
 const finTotal= total.toLocaleString('ru-RU');
 result.textContent = `Итоговая стоимость автомобиля - ${finTotal} рублей`;
 }
