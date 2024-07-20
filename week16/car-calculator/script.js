@@ -99,6 +99,7 @@ fuelArray.forEach((fuelElement) =>{
             fuelPrice = 0;
         }
         
+        
     })
     
 });

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h2 {
+        font-size: 30px;
+        margin-left: 20px;
+
+    }
+
+    .task-input {
+
+        margin: 0;
+        border: 1;
+        border-color: light;
+        border-radius: 1;
+        width: 15%;
+        padding: 16px;
+
+        font-size: 16px;
+
+    }
+
+    li {
+        list-style: none;
+    }
+
+    .no-tasks {
+        color: #888;
+    }
+
+    .btn-2:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    .task-completed {
+        text-decoration: line-through;
+        color: #888;
+    }
+
+    .btn-1 {
+        padding: 16px;
+        width: 14%;
+        background: #ebcccc;
+        color: #000000;
+
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+        border-radius: 0;
+        border: 1;
+        border-color: lightgrey;
+
+    }
+
+    .btn-1:hover {
+        background-color: #bc9a9a;
+    }
+
+
+
+    .btn-2 {
+        padding: 16px;
+        width: 15%;
+        background: #ebcccc;
+        color: #000000;
+
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+        border-radius: 0;
+        border: 1;
+        border-color: lightgrey;
+    }
+
+    .btn-2:hover {
+        background-color: #bc9a9a;
+
+    }
+</style>
+
+<body>
+    <h1>Планировщик задач</h1>
+    <input type="text" id="taskInput" class="task-input" placeholder="Введите задачу">
+    <button id="addTask" class="btn-1">Добавить задачу</button>
+
+    <div class="task-list">
+        <h2>Список задач</h2>
+        <ul id="taskList"></ul>
+        <p id="noTasks" class="no-tasks">Нет задач</p>
+        <button id="clearList" class="btn-2" disabled>Очистить список</button>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const taskInput = document.getElementById('taskInput');
+            const addTaskButton = document.getElementById('addTask');
+            const taskList = document.getElementById('taskList');
+            const noTasksMessage = document.getElementById('noTasks');
+            const clearListButton = document.getElementById('clearList');
+
+            let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+            function updateTaskList() {
+                taskList.innerHTML = '';
+                tasks.forEach((task, index) => {
+                    const li = document.createElement('li');
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkbox.checked = task.completed;
+                    checkbox.addEventListener('change', () => toggleTask(index));
+
+                    const span = document.createElement('span');
+                    span.textContent = task.text;
+                    if (task.completed) {
+                        span.style.textDecoration = 'line-through';
+                        span.style.color = 'gray';
+                    }
+
+                    li.appendChild(checkbox);
+                    // li.appendChild(document.createTextNode(task.text));
+                    li.appendChild(span);
+                    taskList.appendChild(li);
+                });
+
+                noTasksMessage.style.display = tasks.length ? 'none' : 'block';
+                clearListButton.disabled = tasks.length === 0;
+
+                localStorage.setItem('tasks', JSON.stringify(tasks));
+            }
+
+            function addTask() {
+                const taskText = taskInput.value.trim();
+                if (taskText) {
+                    tasks.push({ text: taskText, completed: false });
+                    taskInput.value = '';
+                    updateTaskList();
+                }
+            }
+
+            function toggleTask(index) {
+                tasks[index].completed = !tasks[index].completed;
+                updateTaskList();
+            }
+
+            function clearList() {
+                tasks = [];
+                updateTaskList();
+            }
+
+            addTaskButton.addEventListener('click', addTask);
+            clearListButton.addEventListener('click', clearList);
+
+            taskInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    addTask();
+                }
+            });
+
+            updateTaskList();
+        });
+    </script>
+</body>
+
+</html>

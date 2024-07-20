@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Планировщик задач</title>
+    <style>
+        .completed {
+            text-decoration: line-through;
+        }
+        #emptyNotification {
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="taskInput" placeholder="Введите задачу">
+    <button onclick="addTask()">Добавить задачу</button>
+    <ul id="taskList"></ul>
+    <button id="clearButton" onclick="clearTasks()" disabled>Очистить список</button>
+    <p id="emptyNotification">Задачи отсутствуют</p>
+
+    <script>
+        const taskInput = document.getElementById('taskInput');
+        const taskList = document.getElementById('taskList');
+        const clearButton = document.getElementById('clearButton');
+        const emptyNotification = document.getElementById('emptyNotification');
+
+        let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+        function renderTasks() {
+            taskList.innerHTML = '';
+            tasks.forEach((task, index) => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <input type="checkbox" ${task.completed ? 'checked' : ''} onchange="toggleTask(${index})">
+                    <span class="${task.completed ? 'completed' : ''}">${task.text}</span>
+                `;
+                taskList.appendChild(li);
+            });
+
+            updateUI();
+        }
+
+        function addTask() {
+            const taskText = taskInput.value.trim();
+            if (taskText) {
+                tasks.push({ text: taskText, completed: false });
+                taskInput.value = '';
+                saveTasks();
+                renderTasks();
+            }
+        }
+
+        function toggleTask(index) {
+            tasks[index].completed = !tasks[index].completed;
+            saveTasks();
+            renderTasks();
+        }
+
+        function clearTasks() {
+            tasks = [];
+            saveTasks();
+            renderTasks();
+        }
+
+        function saveTasks() {
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+        }
+
+        function updateUI() {
+            clearButton.disabled = tasks.length === 0;
+            emptyNotification.style.display = tasks.length === 0 ? 'block' : 'none';
+        }
+
+        renderTasks();
+    </script>
+</body>
+</html>
