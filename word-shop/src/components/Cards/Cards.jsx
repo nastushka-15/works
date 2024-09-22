@@ -1,5 +1,5 @@
 import React from "react";
-import './cards.css';
+import '../Cards/Cards.css';
 function Card({id, english, transcription, russian, tags, tags_json, boolean}) {
     return (
         <div className="card">

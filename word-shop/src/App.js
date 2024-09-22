@@ -1,9 +1,9 @@
 
 import './App.css';
-import Footer from './components/footer';
-import Header from './components/header';
+import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
 import words from './words';
-import Card from './components/cards';
+import Card from './components/Cards/Cards';
 function App() {
   return (
     <div className="App">
