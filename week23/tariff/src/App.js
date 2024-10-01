@@ -11,7 +11,6 @@ key={index}
 price={card.price}
 speed={card.speed}
 color={card.color}
-isHighlighted={card.isHighlighted}
 />
 ))}
     </div>
