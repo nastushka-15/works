@@ -12,7 +12,7 @@ font-family: 'Noto Sans JP', sans-serif;
 background-color: #fef8f8;
 } */
 
-.card-container{
+.card__box{
 font-family: 'Noto Sans JP', sans-serif;
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -23,7 +23,6 @@ padding: 5%;
 }
 
 .card {
-
 height: fit-content; 
 width: 200px; 
 border-radius:1%;
@@ -39,6 +38,16 @@ background:rgb(229, 224, 224, 0.5);
 .card__image {      
 width: 100%;
 height: auto;
+}
+.btn__translate {
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 5px;
+    background-image: linear-gradient(to right, #c5005c 0%, #b77299 51%,  rgba(213,93,100,1)100%);
+    cursor: pointer;
 }
 
 /* .card__overlay {

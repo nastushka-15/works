@@ -4,9 +4,17 @@ import '../Card/Card.css';
 function Card (props) {
 const {price, color, speed}=props;
 const [clicked, setClicked] = useState(props.clicked || false);
-const handleChange = () =>{
-    setClicked(!clicked)
-}
+const handleChange = (e) => {
+    // Отменяем выделение на всех остальных карточках
+    document.querySelectorAll('.card').forEach(card => {
+        if (card !== e.currentTarget) {
+            card.classList.remove('highlighted');
+        }
+    });
+
+    // Выделяем текущую карточку
+    setClicked(!clicked);
+};
 return (
     <div className={`card ${clicked ? "highlighted" : ""}`} onClick={handleChange}>
         <div className={color}>
