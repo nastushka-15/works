@@ -1,22 +1,14 @@
-import React, {useState} from 'react';
+
 import '../Card/Card.css';
 
 function Card (props) {
-const {price, color, speed}=props;
-const [clicked, setClicked] = useState(props.clicked || false);
-const handleChange = (e) => {
-    // Отменяем выделение на всех остальных карточках
-    document.querySelectorAll('.card').forEach(card => {
-        if (card !== e.currentTarget) {
-            card.classList.remove('highlighted');
-        }
-    });
+const {price, color, speed, clicked, onClick, id}=props;
 
-    // Выделяем текущую карточку
-    setClicked(!clicked);
-};
+
+
+
 return (
-    <div className={`card ${clicked ? "highlighted" : ""}`} onClick={handleChange}>
+    <div className={`card ${clicked ? "highlighted" : ""}`} onClick={()=>{onClick(id)}}>
         <div className={color}>
             <h4 className="card_header">Безлимитный {price}</h4>
             <h2 className="big">{price} <span className="normal">руб/мес</span></h2>
