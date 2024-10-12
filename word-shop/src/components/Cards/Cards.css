@@ -14,12 +14,19 @@ background-color: #fef8f8;
 
 .card__box{
 font-family: 'Noto Sans JP', sans-serif;
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-gap: 1px;
-margin:5%;
-padding: 5%;
+/* width: 95%;
+max-width: 1300px; */
+margin: auto;
+display: flex;
+width: fit-content;
+gap: 8px;
+margin-bottom: 1%;
+align-items: center;
 
+}
+
+.arrow {
+    width: 100%;
 }
 
 .card {
@@ -27,7 +34,7 @@ height: fit-content;
 width: 200px; 
 border-radius:1%;
 
-margin: 2em;
+margin: auto;
 padding: 2em;
 border-radius: 1em;
 border: 1px solid transparentize(black, 0.5);
@@ -39,6 +46,24 @@ background:rgb(229, 224, 224, 0.5);
 width: 100%;
 height: auto;
 }
+
+.btn-swtch {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    background-image: linear-gradient(to right, #c5005c 0%, #b77299 51%,  rgba(213,93,100,1)100%);
+    cursor: pointer;
+}
+
+.btn-swtch:hover {
+    background-image: linear-gradient(to right, rgba(228,145,41,1) 0%, #b77299 51%,  rgba(213,93,100,1)100%);
+}
+
 .btn__translate {
     text-align: center;
     transition: 0.5s;
