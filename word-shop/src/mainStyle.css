@@ -12,6 +12,14 @@
     font-weight: normal; 
     }
 
+    @font-face {
+    font-family: "Magic-Retro";
+    src: url("../public/assets/fonts/Magic-Retro.ttf") format("truetype");
+    font-style: normal; 
+    font-weight: light; 
+    }
+
     h1, h2 {
-        font-family: "Raleway-Medium";
+        font-family: "Magic-Retro", sans-serif;
+        font-weight: lighter;
     }

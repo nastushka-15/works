@@ -1,0 +1,10 @@
+.logo__image {
+    width: 150px;
+    height: auto;
+}
+
+.logo__image:hover {
+    
+    cursor: url(../../../butterfly4.png), pointer;
+       
+}

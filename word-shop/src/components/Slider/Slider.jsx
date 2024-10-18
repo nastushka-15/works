@@ -1,0 +1,48 @@
+import React, { useState } from 'react';
+import Card from '../Cards/Cards';
+import arrowPrev from '../Slider/arrow-previous.png';
+import arrowNext from '../Slider/arrow-next.png';
+import data from '../../components/WordList/data.json';
+
+function Slider(props) {
+    const [currentCardIndex, setCurrentCardIndex] = useState(props.initialCardIndex || 0);
+    const cardCount = data.length;
+
+const handleNextCard = () => {
+    if (currentCardIndex === cardCount - 1) {
+    setCurrentCardIndex(0);
+    } else {
+    setCurrentCardIndex(currentCardIndex + 1);
+    }
+};
+
+const handlePrevCard = () => {
+    if (currentCardIndex === 0) {
+    setCurrentCardIndex(cardCount - 1);
+    } else {
+    setCurrentCardIndex(currentCardIndex - 1);
+    }
+};
+
+    return (
+    <>
+    <div className='card__box'>
+        <button onClick={handlePrevCard} className='btn-swtch'> <img src={arrowPrev} className='arrow' alt='arrow'></img> </button>
+        <Card
+            key={data[currentCardIndex].id}
+            english={data[currentCardIndex].english}
+            transcription={data[currentCardIndex].transcription}
+            russian={data[currentCardIndex].russian}
+        />
+        <button onClick={handleNextCard} className='btn-swtch'><img src={arrowNext} className='arrow' alt='arrow'></img> </button>
+    </div>
+    <span className='card__count-text'>{`${currentCardIndex + 1}/${cardCount}`}</span>
+    </>
+    );
+}
+
+Slider.defaultProps = {
+initialCardIndex: 0,
+};
+
+export default Slider;

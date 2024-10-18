@@ -9,6 +9,7 @@
 
 .card-container{
   display: flex;
+  
 }
 
 
@@ -49,8 +50,11 @@ linear-gradient(to right, rgba(98,87,147,1) 0%, rgba(98,87,147,1) 33%, rgba(213,
 .card__count-text {
   color: white;
   margin-bottom: 1%;
+  font-family: "Magic-Retro", sans-serif;
+  font-weight: lighter;
 }
 
 .App-footer {
   color: white;
 }
+
