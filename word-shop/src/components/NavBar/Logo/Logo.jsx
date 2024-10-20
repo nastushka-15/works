@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import '../../NavBar/Logo/Logo.css'; 
 import logo from '../../NavBar/Logo/logo.png';
-import butterfly from '../../../butterfly4.png';
+// import butterfly from '../../../butterfly4.png';
 
 
 function Logo() {
