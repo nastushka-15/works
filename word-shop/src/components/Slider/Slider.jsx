@@ -24,15 +24,23 @@ const handlePrevCard = () => {
     }
 };
 
+const [wordTranslate, setWordTranslate] = useState(0)
+    let countWord=()=>{
+        setWordTranslate(wordTranslate+1)
+    }
+
     return (
     <>
+    <span className='card__count-text'>You translate {wordTranslate} new words</span>
     <div className='card__box'>
+    
         <button onClick={handlePrevCard} className='btn-swtch'> <img src={arrowPrev} className='arrow' alt='arrow'></img> </button>
         <Card
             key={data[currentCardIndex].id}
             english={data[currentCardIndex].english}
             transcription={data[currentCardIndex].transcription}
             russian={data[currentCardIndex].russian}
+            countWord = {countWord}
         />
         <button onClick={handleNextCard} className='btn-swtch'><img src={arrowNext} className='arrow' alt='arrow'></img> </button>
     </div>
