@@ -27,6 +27,7 @@ const handlePrevCard = () => {
 const [wordTranslate, setWordTranslate] = useState(0)
     let countWord=()=>{
         setWordTranslate(wordTranslate+1)
+        
     }
 
     return (
