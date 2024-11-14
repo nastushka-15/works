@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Card from '../Cards/Cards';
 import arrowPrev from '../Slider/arrow-previous.png';
 import arrowNext from '../Slider/arrow-next.png';
-import data from '../../components/WordList/data.json';
+// import data from '../../components/WordList/data.json';
+import { WordsContext } from '../WordsContext/WordsContext';
 
-function Slider(props) {
-    const [currentCardIndex, setCurrentCardIndex] = useState(props.initialCardIndex || 0);
+
+function Slider() {
+    const {data} = useContext(WordsContext);
+    const [currentCardIndex, setCurrentCardIndex] = useState(data.initialCardIndex || 0);
     const cardCount = data.length;
 
 const handleNextCard = () => {
