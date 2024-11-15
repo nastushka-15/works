@@ -1,16 +1,24 @@
 import React, { useState, useEffect, createContext } from "react";
+import LoadingIndicator from '../LoadingIndicator/LoadingIndicator';
+
 
 const WordsContext = createContext();
 
 const WordsContextProvider = (props) => {
     const [data, setData] = useState([]);
-
+    const [loading, setLoading] = useState(true); // Состояние загрузки
     // Данный хук аналогичен методу componentDidMount
     useEffect(() => {
         fetch('http://itgirlschool.justmakeit.ru/api/words')
             .then((response) => response.json())
-            .then((response) => setData(response))
-            .catch((error) => console.error("Ошибка при загрузке данных:", error));
+            .then((response) => {
+                setData(response);
+                setLoading(false); // Устанавливаем загрузку в false после получения данных
+            })
+            .catch((error) => {
+                console.error("Ошибка при загрузке данных:", error);
+                setLoading(false); // Устанавливаем загрузку в false также в случае ошибки
+            });
     }, []);
 
     const addWord = (newWord) => {
@@ -55,6 +63,9 @@ const WordsContextProvider = (props) => {
         .catch((error) => console.error("Ошибка при удалении слова:", error));
     };
 
+    if (loading) {
+        return <LoadingIndicator />; // Показываем индикатор загрузки, если данные загружаются
+    }
     return (
         <WordsContext.Provider value={{ data, addWord, editWord, deleteWord }}>
             {props.children}

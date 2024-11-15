@@ -48,7 +48,7 @@ const WordList = () => {
   const isFormValid = Object.values(fields).every((field) => field);
 
   const handleSubmit = () => {
-    // Здесь вы можете вызвать метод добавления нового слова
+    //Здесь вы можете вызвать метод добавления нового слова
     addWord({
       id: '',
       english: fields.field1,
@@ -116,7 +116,7 @@ return (
                 <button
                   disabled={!isFormValid}
                   className='btn btn_save'
-                  onClick={() => { handleSave(index); handleSubmit(); }}
+                  onClick={() => { handleSave(index);  }}
                 >
                   Save
                 </button>
