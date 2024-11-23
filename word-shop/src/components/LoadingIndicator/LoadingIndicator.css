@@ -4,7 +4,7 @@
     border-top: 8px solid #3498db; /* Цвет ободка */
     width: 60px;
     height: 60px;
-    animation: spin 1s linear infinite; /* Анимация вращения */
+    animation: spin 1s linear infinite; /*Анимация вращения */ 
     margin: 100px auto; /* Центрирование */
 }
 
