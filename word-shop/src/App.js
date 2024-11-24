@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from "react";
 import './App.css';
 import './mainStyle.css';
 import Footer from './components/Footer/Footer';
@@ -8,11 +8,15 @@ import NavBar from './components/NavBar/NavBar';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Slider from './components/Slider/Slider';
 import MissingPage from './components/MissingPage/MissingPage';
+import { Provider } from 'mobx-react';
+import wordsStore from './stores/wordsStore';
+
 
 
 function App(props) {
 
   return (
+    <Provider value={wordsStore}>
     <Router>
       <div className="App">
         <NavBar/>
@@ -25,6 +29,7 @@ function App(props) {
         <Footer/>
       </div>
     </Router>
+    </Provider>
   );
 }
 
